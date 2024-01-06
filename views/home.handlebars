@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+</head>
+<body>
+    <nav class="navigation">
+        <a class="get_home" href="/">Get Home</a>
+    </nav>
+        {{!-- dont forget to change input type into checkbox--}}
+        <form action="/weather" method="POST">
+        <label for='country'>Chose a country</label>
+        <input type="text"/><button name="country">Enter</button>
+        </form>
+
+</body>
+</html>
