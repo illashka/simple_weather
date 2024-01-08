@@ -15,7 +15,9 @@ router.get('/weather', (req, res, next)=>{
     let data = weather_controller.getWeather(options);
     data.then(function(result){
         console.log(result);
+        weather_controller.saveWeather(result);
     });
+
 });
 
 

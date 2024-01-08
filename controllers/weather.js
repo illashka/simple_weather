@@ -21,7 +21,7 @@ const city = data.city;
   };*/
 
 exports.saveWeather = function saveWeather(weather){
-    fs.writeFile('../data/fetched_data.json', weather, function(err){
+    fs.writeFile('./data/fetched_data.json', JSON.stringify(weather), function(err){
       if(err){
         return console.log(err);
       }
