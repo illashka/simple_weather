@@ -33,4 +33,14 @@ module.exports = class WeatherData{
         weather.saveValues('Condition: ' + this.condition + '\n');
         //return this.condition;
     }
+    
+    getValues(){
+        weather.saveValues("{");
+        weather.saveValues('"City":"' + this.city + '",\n');
+        weather.saveValues('"Date":"' + this.date + '",\n');
+        weather.saveValues('"Temperature":"' + this.temperature + '",\n');
+        weather.saveValues('"Feels like":"' + this.feelsLike + '",\n');
+        weather.saveValues('"Condition":"' + this.condition + '"\n');
+        weather.saveValues("}");
+    }
 }
