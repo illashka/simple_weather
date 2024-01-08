@@ -1,6 +1,8 @@
 const axios = require('axios');
 const express = require('express');
 
+const fs = require('fs');
+
 const data = require('../routes/main_route')
 
 const city = data.city;
@@ -18,10 +20,18 @@ const city = data.city;
     }
   };*/
 
+exports.saveWeather = function saveWeather(weather){
+    fs.writeFile('../data/fetched_data.json', weather, function(err){
+      if(err){
+        return console.log(err);
+      }
+    });
+}
+
 exports.getWeather = async function getWeather(options){
   try {
     const response = await axios.request(options);
-    console.log(response.data);
+    return response.data;
   } catch (error) {
     console.error(error);
   }

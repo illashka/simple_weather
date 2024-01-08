@@ -12,7 +12,10 @@ let options = {};
 
 router.get('/weather', (req, res, next)=>{
     res.render('weather', {pageTitle: 'weather'});
-    weather_controller.getWeather(options);
+    let data = weather_controller.getWeather(options);
+    data.then(function(result){
+        console.log(result);
+    });
 });
 
 
