@@ -10,37 +10,27 @@ module.exports = class WeatherData{
     }
 
     getCity(){
-        weather.saveValues('City: ' + this.city + '\n');
-        //return this.city;
+        weather.saveValues('"City":"' + this.city + '",\n');
+        return this.city;
     }
 
     getDate(){
-        weather.saveValues('Date: ' + this.date + '\n');
-        //return this.date;
+        weather.saveValues('"Date":"' + this.date + '",\n');
+        return this.date;
     }
 
     getTemp(){
-        weather.saveValues('Temperature: ' + this.temperature + '\n');
-        //return this.temperature;
+        weather.saveValues('"Temperature":"' + this.temperature + '",\n');
+        return this.temperature;
     }
 
     getFeelsLike(){
-        weather.saveValues('Feels like: ' + this.feelsLike + '\n');
-        //return this.feelsLike;
+        weather.saveValues('"Feels like":"' + this.feelsLike + '",\n');
+        return this.feelsLike;
     }
 
     getCondition(){
-        weather.saveValues('Condition: ' + this.condition + '\n');
-        //return this.condition;
-    }
-    
-    getValues(){
-        weather.saveValues("{");
-        weather.saveValues('"City":"' + this.city + '",\n');
-        weather.saveValues('"Date":"' + this.date + '",\n');
-        weather.saveValues('"Temperature":"' + this.temperature + '",\n');
-        weather.saveValues('"Feels like":"' + this.feelsLike + '",\n');
-        weather.saveValues('"Condition":"' + this.condition + '"\n');
-        weather.saveValues("}");
+        weather.saveValues('"Condition":"' + this.condition + '",\n');
+        return this.condition;
     }
 }

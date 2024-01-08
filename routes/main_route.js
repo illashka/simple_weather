@@ -12,20 +12,31 @@ const city = [];
 let options = {};
 
 router.get('/weather', (req, res, next)=>{
-    res.render('weather', {pageTitle: 'weather'});
     let data = weather_controller.getWeather(options);
     data.then(function(result){
         console.log(result);
         weather_controller.saveWeather(result);
-        //
+        
         weatherClass = new Weather((result.location.name),
                                      (result.location.localtime),
                                      (result.current.temp_c),
                                      (result.current.feelslike_c),
                                      (result.current.condition.text));
-        weatherClass.getValues();
-        //
+        currentCity = weatherClass.getCity();
+        currentDate = weatherClass.getDate();
+        currentTemp = weatherClass.getTemp();
+        currentFeels = weatherClass.getFeelsLike();
+        currentCondition = weatherClass.getCondition();
+    }).then(function(){
+        res.render('weather', { pageTitle: 'weather', 
+        cityname: currentCity,
+        citydate: currentDate,
+        citytemp: currentTemp,
+        cityfeels: currentFeels,
+        citycond: currentCondition
     });
+    });
+
 });
 
 
