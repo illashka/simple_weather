@@ -3,6 +3,7 @@ const axios = require('axios');
 
 const weather_controller = require('../controllers/weather');
 const weatherOptions = require('../data/options');
+const Weather = require('../controllers/getWeather');
 
 const router = express.Router();
 
@@ -16,8 +17,15 @@ router.get('/weather', (req, res, next)=>{
     data.then(function(result){
         console.log(result);
         weather_controller.saveWeather(result);
+        //
+        weatherClass = new Weather((result.location.name),
+                                     (result.location.localtime),
+                                     (result.current.temp_c),
+                                     (result.current.feelslike_c),
+                                     (result.current.condition.text));
+        weatherClass.getTemp();
+        //
     });
-
 });
 
 
