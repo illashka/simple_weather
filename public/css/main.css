@@ -1,0 +1,77 @@
+body, html{
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgb(66, 27, 143)
+}
+
+.navigation{
+    background-color: rgb(41, 16, 92);
+    text-transform: uppercase;
+    font-family: sans-serif;
+    font-size: 32px;
+}
+
+.get_home{
+    display: flex;
+    justify-content: center;
+    text-decoration-color: none;
+    text-decoration: none;
+    color: rgb(224, 218, 218);
+    padding: 2.5rem;
+}
+.get_home:hover{
+    background-color: rgb(224, 218, 218);
+    color: rgb(41, 16, 92);
+    transition: 1s;
+}
+
+.get_city{
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 11rem 40rem 0;
+    background-color: rgb(66, 27, 143);
+}
+
+#cityname{
+    display: flex;
+    justify-content: center;
+    border-radius: 20px;
+    border-color: rgb(95, 15, 144);
+    border-width: 2px;
+    border-top-color: rgb(95, 15, 144);
+    background-color: rgb(231, 223, 236);
+    height: 5rem;
+    width: 25rem;
+    font-family: sans-serif;
+    color: rgb(14, 13, 13);
+    font-size: 26px;
+}
+
+.title_label{
+    display: flex;
+    justify-content: center;
+    color: rgb(224, 218, 218);
+    font-size: 30px;
+    text-transform: uppercase;
+}
+
+.enter{
+    justify-self: center;
+    margin-top: 1rem;
+    width: 12rem;
+    height: 3rem;
+    border-radius: 10px;
+    background-color: rgb(41, 16, 92);
+    color: rgb(224, 218, 218);
+    font-family: sans-serif;
+    font-size: 20px;
+    text-transform: uppercase;
+}
+
+.enter:hover{
+    background-color: rgb(224, 218, 218);
+    color: rgb(41, 16, 92);
+    transition: 1s;
+    cursor: pointer;
+}

@@ -12,6 +12,7 @@ const city = [];
 let options = {};
 
 router.get('/weather', (req, res, next)=>{
+    let currentCity,currentDate, currentTemp, currentFeels, currentCondition;
     let data = weather_controller.getWeather(options);
     data.then(function(result){
         console.log(result);
@@ -28,13 +29,14 @@ router.get('/weather', (req, res, next)=>{
         currentFeels = weatherClass.getFeelsLike();
         currentCondition = weatherClass.getCondition();
     }).then(function(){
+        if(currentCity){
         res.render('weather', { pageTitle: 'weather', 
         cityname: currentCity,
         citydate: currentDate,
         citytemp: currentTemp,
         cityfeels: currentFeels,
         citycond: currentCondition
-    });
+    });} else {res.render('404err');};
     });
 
 });

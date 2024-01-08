@@ -7,6 +7,7 @@ const routes = require('./routes/main_route');
 const app = express();
 
 app.use(express.urlencoded({extended:true}));
+app.use(express.static('public'));
 
 app.engine('handlebars', handlebars.engine);
 app.set('view engine', 'handlebars');
