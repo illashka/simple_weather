@@ -1,3 +1,5 @@
+const weather = require("./weather");
+
 module.exports = class WeatherData{
     constructor(city, date, temperature, feelsLike, condition){
         this.city = city;
@@ -8,23 +10,27 @@ module.exports = class WeatherData{
     }
 
     getCity(){
-        return this.city;
+        weather.saveValues('City: ' + this.city + '\n');
+        //return this.city;
     }
 
     getDate(){
-        return this.date;
+        weather.saveValues('Date: ' + this.date + '\n');
+        //return this.date;
     }
 
     getTemp(){
-        console.log(this.temperature);
-        return this.temperature;
+        weather.saveValues('Temperature: ' + this.temperature + '\n');
+        //return this.temperature;
     }
 
     getFeelsLike(){
-        return this.feelsLike;
+        weather.saveValues('Feels like: ' + this.feelsLike + '\n');
+        //return this.feelsLike;
     }
 
     getCondition(){
-        return this.condition;
+        weather.saveValues('Condition: ' + this.condition + '\n');
+        //return this.condition;
     }
 }

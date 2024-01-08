@@ -36,3 +36,17 @@ exports.getWeather = async function getWeather(options){
     console.error(error);
   }
 }
+
+//Save necessary values into result.json
+exports.saveValues = function saveValues(value){
+  fs.writeFile('./data/result.json', '', function(err){
+    if(err){
+      return console.log(err);
+    }
+  });
+  fs.appendFile('./data/result.json', value.toString(), function(err){
+    if(err){
+      return console.log(err);
+    }
+  });
+}

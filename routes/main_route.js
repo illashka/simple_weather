@@ -23,7 +23,7 @@ router.get('/weather', (req, res, next)=>{
                                      (result.current.temp_c),
                                      (result.current.feelslike_c),
                                      (result.current.condition.text));
-        weatherClass.getTemp();
+        weatherClass.getCity();weatherClass.getDate();weatherClass.getTemp();weatherClass.getFeelsLike();weatherClass.getCondition();
         //
     });
 });
