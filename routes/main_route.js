@@ -49,7 +49,9 @@ router.get('/', (req, res, next)=>{
 router.post('/weather', (req,res,next)=>{
     city.push({name: req.body.cityname});
     console.log(city[city.length-1].name);
-    options = {...weatherOptions, params:{q: city[city.length-1].name, ...weatherOptions.params}};
+    options = {...weatherOptions, params:{
+        q: city[city.length-1].name != '' ? city[city.length-1].name : 'Moscow', 
+        ...weatherOptions.params}};
     res.redirect('/weather');
 })
 
