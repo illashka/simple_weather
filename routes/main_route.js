@@ -11,6 +11,10 @@ const city = [];
 
 let options = {};
 
+let eveningTime = [17,18,20,21,22,23,0,1,2,3,4,5];
+let nightPic = 'img/grass_night.png';
+let dayPic = 'img/grass_day.png';
+
 router.get('/weather', (req, res, next)=>{
     let currentCity,currentDate, currentTemp, currentFeels, currentCondition;
     let data = weather_controller.getWeather(options);
@@ -36,7 +40,7 @@ router.get('/weather', (req, res, next)=>{
         cityfeels: currentFeels,
         citycond: currentCondition,
         // Verify if it's evening/night or morning/day
-        currentImage: [20,21,22,23,0,1,2,3,4,5].includes(parseInt(currentDate.slice(10))) ? 'img/grass_night.png' : 'img/grass_day.png'
+        currentImage: eveningTime.includes(parseInt(currentDate.slice(10))) ? nightPic : dayPic
     })});
 
 });
