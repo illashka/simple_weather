@@ -29,15 +29,15 @@ router.get('/weather', (req, res, next)=>{
         currentFeels = weatherClass.getFeelsLike();
         currentCondition = weatherClass.getCondition();
     }).then(function(){
-        if(currentCity){
-        res.render('weather', { pageTitle: 'weather', 
+        res.render('weather', {pageTitle: 'weather', 
         cityname: currentCity,
         citydate: currentDate,
         citytemp: currentTemp,
         cityfeels: currentFeels,
-        citycond: currentCondition
-    });} else {res.render('404err');};
-    });
+        citycond: currentCondition,
+        // Verify if it's evening/night or morning/day
+        currentImage: [20,21,22,23,0,1,2,3,4,5].includes(parseInt(currentDate.slice(10))) ? 'img/grass_night.png' : 'img/grass_day.png'
+    })});
 
 });
 
@@ -50,6 +50,7 @@ router.post('/weather', (req,res,next)=>{
     city.push({name: req.body.cityname});
     console.log(city[city.length-1].name);
     options = {...weatherOptions, params:{
+        // IF user left form empty
         q: city[city.length-1].name != '' ? city[city.length-1].name : 'Moscow', 
         ...weatherOptions.params}};
     res.redirect('/weather');
