@@ -76,3 +76,71 @@ body, html{
     transition: 1s;
     cursor: pointer;
 }
+
+.current{
+    display: grid;
+    height: 20rem;
+    grid-template-areas:
+    "A A A A  A A A A  A A A A"
+    "B B B B  B B B B  B B B B"
+    "C C C C  C C D D  D D D D"
+    "E E E E  E E E E  E E E E";
+    justify-items: center;
+    align-items: center;
+}
+
+.city{
+    grid-area: A;
+    grid-row: span 1;
+    padding: 2rem 5rem;
+    background-color: rgba(187, 128, 214, 0.644);
+    border-color: rgb(173, 21, 243);
+    border-radius: 15px;
+    color: white;
+    font-family: sans-serif;
+    font-size: 28px;
+}
+.date{
+    grid-area: B;
+    grid-row: span 1;
+    padding: 2rem 5rem;
+    background-color: rgba(187, 128, 214, 0.644);
+    border-color: rgb(173, 21, 243);
+    border-radius: 15px;
+    color: white;
+    font-family: sans-serif;
+    font-size: 28px;
+}
+.temp{
+    grid-area: C;
+    grid-row: span 2;
+    padding: 2rem 10rem;
+    background-color: rgba(187, 128, 214, 0.644);
+    border-color: rgb(173, 21, 243);
+    border-radius: 15px;
+    color: white;
+    font-family: sans-serif;
+    font-size: 28px;
+}
+.feels{
+    grid-area: D;
+    grid-row: span 2;
+    padding: 2rem 10rem;
+    background-color: rgba(187, 128, 214, 0.644);
+    border-color: rgb(173, 21, 243);
+    border-radius: 15px;
+    color: white;
+    font-family: sans-serif;
+    font-size: 28px;
+}
+.cond{
+    grid-area: E;
+    grid-row: span 3;
+    padding: 2rem 5rem;
+    background-color: rgba(187, 128, 214, 0.644);
+    border-color: rgb(173, 21, 243);
+    border-radius: 15px;
+    color: white;
+    font-family: sans-serif;
+    font-size: 28px;
+}
