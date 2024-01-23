@@ -29,13 +29,14 @@ body, html{
 .get_city{
     display: grid;
     grid-template-columns: 1fr;
-    padding: 11rem 40rem 0;
+    padding: 13rem 40rem;
     background-color: rgb(66, 27, 143);
 }
 
 #cityname{
     display: flex;
     justify-content: center;
+    justify-self: center;
     border-radius: 20px;
     border-color: rgb(95, 15, 144);
     border-width: 2px;
@@ -51,6 +52,7 @@ body, html{
 .title_label{
     display: flex;
     justify-content: center;
+    padding-bottom: 1rem;
     font-family: sans-serif;
     color: rgb(224, 218, 218);
     font-size: 30px;
