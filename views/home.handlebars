@@ -10,10 +10,14 @@
         <a class="get_home" href="/">Get Home</a>
     </nav>
     <div class="content">
-        {{!-- dont forget to change input type into checkbox--}}
+        {{!-- dont forget to change input type into checkbox (maybe later)--}}
         <form class="get_city"action="/weather" method="POST">
-        <label for='title' class="title_label">Choose a city</label>
-        <input type="text" name="cityname" id="cityname" placeholder="Moscow"/><button class="enter" type="submit">Current weather</button>
+            <label for='title' class="title_label">Choose a city</label>
+            <input type="text" name="cityname" id="cityname" placeholder="Moscow"/>
+            <div class="buttons">
+                <button class="enter__current" type="submit">Current weather</button>
+                <button class="enter__forecast" type="submit">Tomorrow weather</button>
+            </div>
         </form>
     </div>
 </body>
