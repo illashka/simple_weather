@@ -1,4 +1,16 @@
-const weather = require("./weather");
+const fs = require('fs')
+
+const weather = require("../controllers/weather");
+
+const getProductsFromFile = cb => {
+    fs.readFile('../data/fetched_data.json', (err, content)=>{
+        if (err){
+            cb([]);
+        } else{
+            cb(JSON.parse(content));
+        }
+    });
+}
 
 module.exports = class WeatherData{
     constructor(city, date, temperature, feelsLike, condition){
@@ -32,5 +44,14 @@ module.exports = class WeatherData{
     getCondition(){
         weather.saveValues('"Condition":"' + this.condition + '",\n');
         return this.condition;
+    }
+
+    save(){
+        getProductsFromFile(products => {
+            products.push(this);
+            fs.writeFile('../data/fetched_data.json', JSON.stringify(products), err=>{
+                console.log(err);
+            });
+        });
     }
 }
